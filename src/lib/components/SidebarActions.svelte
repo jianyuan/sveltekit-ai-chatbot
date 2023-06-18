@@ -1,6 +1,5 @@
 <script lang="ts">
 	import { goto } from '$app/navigation';
-	import { page } from '$app/stores';
 	import {
 		AlertDialog,
 		AlertDialogAction,
@@ -27,8 +26,6 @@
 	import { badgeVariants } from '$lib/components/ui/badge';
 
 	export let chat: Chat;
-
-	const isActive = $page.params.id === chat.id;
 
 	let isShareDialogOpen = false;
 	let isSharePending = false;

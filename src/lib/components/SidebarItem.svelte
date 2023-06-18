@@ -8,7 +8,7 @@
 
 	export let chat: Chat;
 
-	const isActive = $page.params.id === chat.id;
+	$: isActive = $page.params.id === chat.id;
 </script>
 
 <div class="relative">
