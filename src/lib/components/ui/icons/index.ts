@@ -1,2 +1,9 @@
-export { default as IconGitHub } from './IconGithub.svelte';
+export { default as IconClose } from './IconClose.svelte';
+export { default as IconGitHub } from './IconGitHub.svelte';
+export { default as IconMoon } from './IconMoon.svelte';
+export { default as IconSeparator } from './IconSeparator.svelte';
+export { default as IconSidebar } from './IconSidebar.svelte';
+export { default as IconSpinner } from './IconSpinner.svelte';
+export { default as IconSun } from './IconSun.svelte';
+export { default as IconSvelteChat } from './IconSvelteChat.svelte';
 export { default as IconVercel } from './IconVercel.svelte';

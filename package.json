@@ -12,13 +12,17 @@
 		"format": "prettier --plugin-search-dir . --write ."
 	},
 	"dependencies": {
+		"@auth/core": "^0.8.2",
+		"@auth/sveltekit": "^0.3.3",
 		"@fontsource/inter": "^5.0.3",
 		"@fontsource/jetbrains-mono": "^5.0.3",
 		"class-variance-authority": "^0.6.0",
 		"clsx": "^1.2.1",
+		"radix-svelte": "^0.7.1",
 		"tailwind-merge": "^1.13.2"
 	},
 	"devDependencies": {
+		"@rgossiaux/svelte-headlessui": "^2.0.0",
 		"@sveltejs/adapter-auto": "^2.0.0",
 		"@sveltejs/kit": "^1.5.0",
 		"@tailwindcss/typography": "^0.5.9",
