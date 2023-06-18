@@ -1,3 +1,5 @@
+import { kv } from '$lib/kv';
+import { nanoid } from '$lib/utils';
 import { OpenAIStream, StreamingTextResponse } from 'ai';
 import { Configuration, OpenAIApi } from 'openai-edge';
 
@@ -8,8 +10,10 @@ import { env } from '$env/dynamic/private';
 
 import type { RequestHandler } from './$types';
 
-export const POST = (async ({ request }) => {
-	const { messages, previewToken } = await request.json();
+export const POST = (async ({ request, locals: { getSession } }) => {
+	const json = await request.json();
+	const { messages, previewToken } = json;
+	const session = await getSession();
 
 	// Create an OpenAI API client
 	const config = new Configuration({
@@ -28,7 +32,32 @@ export const POST = (async ({ request }) => {
 	// Convert the response into a friendly text-stream
 	const stream = OpenAIStream(response, {
 		async onCompletion(completion) {
-			// TODO
+			const title = messages[0].content.substring(0, 100);
+			const userId = session?.user?.id;
+			if (userId) {
+				const id = json.id ?? nanoid();
+				const createdAt = Date.now();
+				const path = `/chat/${id}`;
+				const payload = {
+					id,
+					title,
+					userId,
+					createdAt,
+					path,
+					messages: [
+						...messages,
+						{
+							content: completion,
+							role: 'assistant'
+						}
+					]
+				};
+				await kv.hmset(`chat:${id}`, payload);
+				await kv.zadd(`user:chat:${userId}`, {
+					score: createdAt,
+					member: `chat:${id}`
+				});
+			}
 		}
 	});
 

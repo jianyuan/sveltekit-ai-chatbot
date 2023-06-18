@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
 	import { page } from '$app/stores';
 	import ClearHistory from '$lib/components/ClearHistory.svelte';
 	import LoginButton from '$lib/components/LoginButton.svelte';
@@ -9,7 +9,10 @@
 	import UserMenu from '$lib/components/UserMenu.svelte';
 	import { buttonVariants } from '$lib/components/ui/button';
 	import { IconGitHub, IconSeparator, IconSvelteChat, IconVercel } from '$lib/components/ui/icons';
+	import type { Chat } from '$lib/types';
 	import { cn } from '$lib/utils';
+
+	export let chats: Chat[];
 </script>
 
 <header
@@ -18,7 +21,7 @@
 	<div class="flex items-center">
 		{#if $page.data.session}
 			<Sidebar>
-				<SidebarList />
+				<SidebarList {chats} />
 				<SidebarFooter>
 					<ThemeToggle />
 					<ClearHistory />

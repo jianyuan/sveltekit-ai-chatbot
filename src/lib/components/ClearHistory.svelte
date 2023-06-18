@@ -44,7 +44,6 @@
 					// TODO: Clear chat history
 					isPending = true;
 					setTimeout(() => {
-						console.log('xxx');
 						isPending = false;
 
 						isOpen = false;

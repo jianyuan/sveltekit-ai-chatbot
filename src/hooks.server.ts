@@ -12,13 +12,17 @@ export const handle = SvelteKitAuth({
 	],
 	callbacks: {
 		async jwt({ token, profile }) {
-			console.log('token', token);
-			console.log('profile', profile);
 			if (profile?.id) {
-				token.id = profile.id;
+				token.id = `${profile.id}`;
 				token.image = profile.picture;
 			}
 			return token;
+		},
+		async session({ session, token }) {
+			if (session.user && typeof token.id === 'string') {
+				session.user.id = token.id;
+			}
+			return session;
 		}
 	},
 	pages: {
