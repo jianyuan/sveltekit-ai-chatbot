@@ -16,5 +16,7 @@
 
 <div class="flex flex-col min-h-screen">
 	<Header />
-	<slot />
+	<main class="flex flex-col flex-1 bg-muted/50">
+		<slot />
+	</main>
 </div>
