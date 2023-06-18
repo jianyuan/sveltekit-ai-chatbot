@@ -19,6 +19,10 @@
 	}
 </script>
 
+<svelte:head>
+	<title>SvelteKit AI Chatbot</title>
+</svelte:head>
+
 <TooltipProvider>
 	<Header {chats} />
 	<main class="flex flex-col flex-1 bg-muted/50">
