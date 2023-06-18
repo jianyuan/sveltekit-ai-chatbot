@@ -1,17 +1,27 @@
 import { SvelteKitAuth } from '@auth/sveltekit';
-import Credentials from '@auth/core/providers/credentials';
+import GitHub from '@auth/core/providers/github';
+import { GITHUB_ID, GITHUB_SECRET } from '$env/static/private';
 
 export const handle = SvelteKitAuth({
 	providers: [
-		Credentials({
-			name: 'Credentials',
-			credentials: {
-				username: { label: 'Username', type: 'text', placeholder: 'jsmith' },
-				password: { label: 'Password', type: 'password' }
-			},
-			async authorize() {
-				return { id: '1', name: 'J Smith', email: 'jsmith@example.com' };
-			}
+		// @ts-ignore
+		GitHub({
+			clientId: GITHUB_ID,
+			clientSecret: GITHUB_SECRET
 		})
-	]
+	],
+	callbacks: {
+		async jwt({ token, profile }) {
+			console.log('token', token);
+			console.log('profile', profile);
+			if (profile?.id) {
+				token.id = profile.id;
+				token.image = profile.picture;
+			}
+			return token;
+		}
+	},
+	pages: {
+		signIn: '/sign-in'
+	}
 });

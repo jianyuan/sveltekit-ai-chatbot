@@ -1,8 +1,10 @@
 <script lang="ts">
 	import { page } from '$app/stores';
+	import { IconExternalLink } from '$lib/components/ui/icons';
+	import { cn } from '$lib/utils';
 	import { Menu, MenuButton, MenuItem, MenuItems } from '@rgossiaux/svelte-headlessui';
 	import Button from './ui/button/Button.svelte';
-	import { cn } from '$lib/utils';
+	import { signOut } from '@auth/sveltekit/client';
 
 	function getUserInitials(name: string) {
 		const [firstName, lastName] = name.split(' ');
@@ -36,7 +38,7 @@
 			class={cn(
 				'absolute',
 				'z-50 min-w-[8rem] overflow-hidden rounded-md border bg-popover p-1 text-popover-foreground shadow animate-in data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2',
-				'w-[180px]'
+				'w-[180px] mt-2'
 			)}
 		>
 			<MenuItem let:active>
@@ -51,15 +53,53 @@
 					<div class="text-xs text-zinc-500">{$page.data.session?.user?.email}</div>
 				</div>
 			</MenuItem>
-			<!-- <MenuItem let:active>
-				<a href="/account-settings" class:active>Account settings</a>
+			<div class="-mx-1 my-1 h-px bg-muted" />
+			<MenuItem let:active>
+				<a
+					href="https://jianyuan.io"
+					target="_blank"
+					rel="noopener noreferrer"
+					class={cn(
+						'relative flex cursor-default select-none items-center rounded-sm px-2 py-1.5 text-sm outline-none transition-colors focus:bg-accent focus:text-accent-foreground data-[disabled]:pointer-events-none data-[disabled]:opacity-50',
+						active ? 'bg-accent text-accent-foreground' : null,
+						'inline-flex items-center justify-between w-full text-xs'
+					)}
+				>
+					jianyuan.IO
+					<IconExternalLink className="w-3 h-3 ml-auto" />
+				</a>
 			</MenuItem>
 			<MenuItem let:active>
-				<a href="/documentation" class:active>Documentation</a>
+				<a
+					href="https://vercel.com"
+					target="_blank"
+					rel="noopener noreferrer"
+					class={cn(
+						'relative flex cursor-default select-none items-center rounded-sm px-2 py-1.5 text-sm outline-none transition-colors focus:bg-accent focus:text-accent-foreground data-[disabled]:pointer-events-none data-[disabled]:opacity-50',
+						active ? 'bg-accent text-accent-foreground' : null,
+						'inline-flex items-center justify-between w-full text-xs'
+					)}
+				>
+					Vercel Homepage
+					<IconExternalLink className="w-3 h-3 ml-auto" />
+				</a>
 			</MenuItem>
-			<MenuItem disabled>
-				<span class="disabled">Invite a friend (coming soon!)</span>
-			</MenuItem> -->
+			<MenuItem let:active>
+				<a
+					href="/"
+					class={cn(
+						'relative flex cursor-default select-none items-center rounded-sm px-2 py-1.5 text-sm outline-none transition-colors focus:bg-accent focus:text-accent-foreground data-[disabled]:pointer-events-none data-[disabled]:opacity-50',
+						active ? 'bg-accent text-accent-foreground' : null,
+						'inline-flex items-center justify-between w-full text-xs'
+					)}
+					on:click={(event) => {
+						event.preventDefault();
+						signOut({ callbackUrl: '/' });
+					}}
+				>
+					Log Out
+				</a>
+			</MenuItem>
 		</MenuItems>
 	</Menu>
 </div>

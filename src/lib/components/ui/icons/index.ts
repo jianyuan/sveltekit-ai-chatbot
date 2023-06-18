@@ -4,6 +4,7 @@ export { default as IconArrowRight } from './IconArrowRight.svelte';
 export { default as IconCheck } from './IconCheck.svelte';
 export { default as IconClose } from './IconClose.svelte';
 export { default as IconCopy } from './IconCopy.svelte';
+export { default as IconExternalLink } from './IconExternalLink.svelte';
 export { default as IconGitHub } from './IconGitHub.svelte';
 export { default as IconMoon } from './IconMoon.svelte';
 export { default as IconOpenAI } from './IconOpenAI.svelte';

@@ -14,9 +14,7 @@
 	}
 </script>
 
-<div class="flex flex-col min-h-screen">
-	<Header />
-	<main class="flex flex-col flex-1 bg-muted/50">
-		<slot />
-	</main>
-</div>
+<Header />
+<main class="flex flex-col flex-1 bg-muted/50">
+	<slot />
+</main>
