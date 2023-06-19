@@ -1,5 +1,6 @@
 import { kv } from '$lib/kv';
 import { nanoid } from '$lib/utils';
+import type { Config } from '@sveltejs/adapter-vercel';
 import { OpenAIStream, StreamingTextResponse } from 'ai';
 import { Configuration, OpenAIApi } from 'openai-edge';
 
@@ -9,6 +10,10 @@ import { env } from '$env/dynamic/private';
 // import { OPENAI_API_KEY } from '$env/static/private'
 
 import type { RequestHandler } from './$types';
+
+export const config: Config = {
+	runtime: 'edge'
+};
 
 export const POST = (async ({ request, locals: { getSession } }) => {
 	const json = await request.json();
