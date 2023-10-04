@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { browser } from '$app/environment';
 	import Header from '$lib/components/Header.svelte';
-	import { TooltipProvider } from '$lib/components/ui/tooltip';
+
 	import { resolvedTheme } from '$lib/theme';
 	import '@fontsource/inter';
 	import '@fontsource/jetbrains-mono';
@@ -25,9 +25,7 @@
 	<title>SvelteKit AI Chatbot</title>
 </svelte:head>
 
-<TooltipProvider>
-	<Header {chats} />
-	<main class="flex flex-col flex-1 bg-muted/50">
-		<slot />
-	</main>
-</TooltipProvider>
+<Header {chats} />
+<main class="flex flex-col flex-1 bg-muted/50">
+	<slot />
+</main>
