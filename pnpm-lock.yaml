@@ -41,9 +41,6 @@ dependencies:
   openai-edge:
     specifier: ^1.0.0
     version: 1.2.2
-  radix-svelte:
-    specifier: ^0.7.1
-    version: 0.7.1(svelte@4.2.1)
   svelte-autosize:
     specifier: ^1.1.0
     version: 1.1.0
@@ -2325,16 +2322,6 @@ packages:
 
   /queue-microtask@1.2.3:
     resolution: {integrity: sha512-NuaNSa6flKT5JaSYQzJok04JzTL1CA6aGhv5rfLW3PgqA+M2ChpZQnAC8h8i4ZFkBS8X5RqkDBHA7r4hej3K9A==}
-
-  /radix-svelte@0.7.1(svelte@4.2.1):
-    resolution: {integrity: sha512-A6ZJK0uWqWYxIf6bAXs5R9r3Zf3e1ftLCqqWxVom4uIfADhmyC/cMvpDUAN19QqOcety02a5zwAT6RGf1CGWEg==}
-    peerDependencies:
-      svelte: ^3.58.0
-    dependencies:
-      '@floating-ui/core': 1.5.0
-      '@floating-ui/dom': 1.5.3
-      svelte: 4.2.1
-    dev: false
 
   /react@18.2.0:
     resolution: {integrity: sha512-/3IjMdb2L9QbBdWiW5e3P2/npwMBaU9mHCSCUzNln0ZCYbcfTsGbTJrU/kGemdH2IWmB2ioZ+zkxtmq6g09fGQ==}
