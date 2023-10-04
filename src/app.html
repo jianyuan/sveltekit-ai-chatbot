@@ -7,6 +7,13 @@
 		%sveltekit.head%
 	</head>
 	<body data-sveltekit-preload-data="hover">
+		<script>
+			const systemTheme = window.matchMedia('(prefers-color-scheme: dark)').matches
+				? 'dark'
+				: 'light';
+			document.documentElement.classList.remove('light', 'dark');
+			document.documentElement.classList.add(systemTheme);
+		</script>
 		<div style="display: flex; flex-direction: column; min-height: 100vh">%sveltekit.body%</div>
 	</body>
 </html>

@@ -7,16 +7,18 @@
 	import '@fontsource/jetbrains-mono';
 	import '../app.postcss';
 	import type { LayoutServerData } from './$types';
+	import { onDestroy } from 'svelte';
 
 	export let data: LayoutServerData;
 	const { chats } = data;
 
-	if (browser) {
+	onDestroy(
 		resolvedTheme.subscribe((value) => {
+			if (!browser) return;
 			document.documentElement.classList.remove('light', 'dark');
 			document.documentElement.classList.add(value);
-		});
-	}
+		})
+	);
 </script>
 
 <svelte:head>
