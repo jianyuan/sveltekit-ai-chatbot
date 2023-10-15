@@ -3,7 +3,7 @@
 	import { IconExternalLink } from '$lib/components/ui/icons';
 	import { cn } from '$lib/utils';
 	import { Menu, MenuButton, MenuItem, MenuItems } from '@rgossiaux/svelte-headlessui';
-	import Button from './ui/button/Button.svelte';
+	import { Button } from './ui/button';
 	import { signOut } from '@auth/sveltekit/client';
 
 	function getUserInitials(name: string) {
