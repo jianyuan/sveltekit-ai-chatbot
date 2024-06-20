@@ -2,6 +2,7 @@
 <h1 align="center">SvelteKit AI Chatbot</h1>
 </a>
 
+
 <p align="center">
   An open-source AI chatbot app template built with SvelteKit, the Vercel AI SDK, OpenAI, and Vercel KV.
 </p>
@@ -16,6 +17,13 @@
 <br/>
 
 This is an **unofficial** SvelteKit port of [vercel-labs/ai-chatbot](https://github.com/vercel-labs/ai-chatbot).
+
+## Support Development
+
+If you find this template useful, please consider supporting me through GitHub Sponsorship or Ko-Fi to help with its development.
+
+[![Github-sponsors](https://img.shields.io/badge/sponsor-30363D?style=for-the-badge&logo=GitHub-Sponsors&logoColor=#EA4AAA)](https://github.com/sponsors/jianyuan)
+[![Ko-Fi](https://img.shields.io/badge/Ko--fi-F16061?style=for-the-badge&logo=ko-fi&logoColor=white)](https://ko-fi.com/L3L71DQEL)
 
 ## Features
 
