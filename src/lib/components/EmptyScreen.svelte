@@ -2,7 +2,7 @@
 	import ExternalLink from '$lib/components/ExternalLink.svelte';
 	import { Button } from '$lib/components/ui/button';
 	import { IconArrowRight } from '$lib/components/ui/icons';
-	import type { UseChatHelpers } from 'ai/svelte/dist';
+	import type { UseChatHelpers } from 'ai/svelte';
 
 	export let input: UseChatHelpers['input'];
 
