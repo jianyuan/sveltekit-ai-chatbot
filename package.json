@@ -27,7 +27,7 @@
 		"svelte-autosize": "^1.1.0",
 		"svelte-copy-to-clipboard": "^0.2.5",
 		"tailwind-merge": "^2.0.0",
-		"tailwind-variants": "^0.1.18"
+		"tailwind-variants": "^0.3.0"
 	},
 	"devDependencies": {
 		"@rgossiaux/svelte-headlessui": "^2.0.0",
