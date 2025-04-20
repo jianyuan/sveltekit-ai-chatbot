@@ -12,7 +12,7 @@
 		"format": "prettier --plugin-search-dir . --write ."
 	},
 	"dependencies": {
-		"@auth/core": "^0.18.1",
+		"@auth/core": "^0.39.0",
 		"@auth/sveltekit": "^0.3.12",
 		"@fontsource/inter": "^5.0.15",
 		"@fontsource/jetbrains-mono": "^5.0.17",
