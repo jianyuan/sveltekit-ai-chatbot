@@ -13,7 +13,7 @@
 	},
 	"dependencies": {
 		"@auth/core": "^0.18.1",
-		"@auth/sveltekit": "^0.3.12",
+		"@auth/sveltekit": "^1.10.0",
 		"@fontsource/inter": "^5.0.15",
 		"@fontsource/jetbrains-mono": "^5.0.17",
 		"@vercel/kv": "^1.0.0",
@@ -31,9 +31,9 @@
 	},
 	"devDependencies": {
 		"@rgossiaux/svelte-headlessui": "^2.0.0",
-		"@sveltejs/adapter-auto": "^2.1.1",
-		"@sveltejs/adapter-vercel": "^3.1.0",
-		"@sveltejs/kit": "^1.30.4",
+		"@sveltejs/adapter-auto": "^6.1.0",
+		"@sveltejs/adapter-vercel": "^5.10.2",
+		"@sveltejs/kit": "^2.38.1",
 		"@tailwindcss/typography": "^0.5.10",
 		"@typescript-eslint/eslint-plugin": "^6.11.0",
 		"@typescript-eslint/parser": "^6.11.0",
@@ -52,7 +52,7 @@
 		"tailwindcss-animate": "^1.0.7",
 		"tslib": "^2.6.2",
 		"typescript": "^5.2.2",
-		"vite": "^4.5.9"
+		"vite": "^7.1.5"
 	},
 	"overrides": {
 		"@rgossiaux/svelte-headlessui": {
