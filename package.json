@@ -17,7 +17,7 @@
 		"@fontsource/inter": "^5.0.15",
 		"@fontsource/jetbrains-mono": "^5.0.17",
 		"@vercel/kv": "^1.0.0",
-		"ai": "^2.2.24",
+		"ai": "^5.0.0",
 		"bits-ui": "^0.9.8",
 		"class-variance-authority": "^0.7.0",
 		"clsx": "^2.0.0",
